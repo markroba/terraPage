@@ -9,10 +9,12 @@ $(function () {
         var scroll = $(window).scrollTop();
         if (scroll < 20) {
             $('.header-navbar').removeClass("sticky");
-            $('.header-navbar img').attr("src", "../assets/img/logo-terra.svg");
+            const basePath = window.location.pathname.includes('/services') ? '../' : '';
+            $('.header-navbar img').attr("src", basePath + "assets/img/logo-terra.svg");
         } else {
             $(".header-navbar").addClass("sticky");
-            $('.header-navbar img').attr("src", "../assets/img/logo-terra-2.svg");
+            const basePath = window.location.pathname.includes('/services') ? '../' : '';
+            $('.header-navbar img').attr("src", basePath + "assets/img/logo-terra-2.svg");
         }
     });
 
