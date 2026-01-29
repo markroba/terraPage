@@ -9,10 +9,16 @@ $(function () {
         var scroll = $(window).scrollTop();
         if (scroll < 20) {
             $('.header-navbar').removeClass("sticky");
-            $('.header-navbar img').attr("src", "../assets/img/logo-terra.svg");
+            const imagePath = window.location.pathname.includes('/services/') 
+                ? "../assets/img/logo-terraa.svg" 
+                : "assets/img/logo-terraa.svg";
+            $('.header-navbar img').attr("src", imagePath);
         } else {
             $(".header-navbar").addClass("sticky");
-            $('.header-navbar img').attr("src", "../assets/img/logo-terra-2.svg");
+            const imagePath = window.location.pathname.includes('/services/') 
+                ? "../assets/img/logo-terraaa-2.svg" 
+                : "assets/img/logo-terraaa-2.svg";
+            $('.header-navbar img').attr("src", imagePath);
         }
     });
 
